@@ -1,0 +1,19 @@
+existe um nginx ativo por padrao no ubuntu, para desativar:
+sudo systemctl stop nginx
+
+
+caso ocorra erro de certutil: function failed: security library: bad database
+
+na execução do bin/install
+
+mkdir -p $HOME/.pki/nssdb
+certutil -d $HOME/.pki/nssdb -N
+
+executar bin/ssl e digitar a senha
+
+
+após a instalação, é preciso adicionar o usuário ao grupo do docker:
+
+vagrant ssh docker-1
+sudo usermod -aG docker vagrant
+newgrp docker
